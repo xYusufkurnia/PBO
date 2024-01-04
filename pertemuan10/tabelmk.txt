@@ -1,0 +1,31 @@
+MariaDB [kampus]> create table matakuliah(
+    -> id int primary key auto_increment,
+    -> kodemk varchar(10) not null,
+    -> namamk varchar(100) not null,
+    -> sks int not null);
+Query OK, 0 rows affected (0.108 sec)
+
+MariaDB [kampus]> insert into matakuliah(kodemk,namamk,sks)values('1001','PBO','3');
+Query OK, 1 row affected (0.049 sec)
+
+MariaDB [kampus]> insert into matakuliah(kodemk,namamk,sks)values('1001','kalkulus','2');
+Query OK, 1 row affected (0.006 sec)
+
+MariaDB [kampus]> insert into matakuliah(kodemk,namamk,sks)values('1003','AIK','2');
+Query OK, 1 row affected (0.007 sec)
+
+MariaDB [kampus]> insert into matakuliah(kodemk,namamk,sks)values('1004','apsi','2');
+Query OK, 1 row affected (0.011 sec)
+
+MariaDB [kampus]> select * from matakulia;
+ERROR 1146 (42S02): Table 'kampus.matakulia' doesn't exist
+MariaDB [kampus]> select * from matakuliah;
++----+--------+----------+-----+
+| id | kodemk | namamk   | sks |
++----+--------+----------+-----+
+|  1 | 1001   | PBO      |   3 |
+|  2 | 1001   | kalkulus |   2 |
+|  3 | 1003   | AIK      |   2 |
+|  4 | 1004   | apsi     |   2 |
++----+--------+----------+-----+
+4 rows in set (0.015 sec)
